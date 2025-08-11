@@ -1,0 +1,6 @@
+# Ignorer toutes les soumissions de contact (données personnelles)
+*.json
+!README.md
+
+# Garder seulement la documentation
+!.gitignore
