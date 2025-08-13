@@ -9,6 +9,14 @@ import PageTransition from "@/components/PageTransition";
 import { usePreloadPages } from "@/hooks/usePreloadPages";
 import { useRouter } from "next/navigation";
 
+interface LineData {
+  key: string;
+  x1: number;
+  y1: number;
+  x2: number;
+  y2: number;
+}
+
 export default function Home() {
   const [isDark, setIsDark] = useState(() => {
     if (typeof window !== 'undefined') {
@@ -34,7 +42,7 @@ export default function Home() {
     contact: { x: 0, y: 0 }
   });
   const [isDragging, setIsDragging] = useState(false);
-  const [lines, setLines] = useState<any[]>([]);
+  const [lines, setLines] = useState<LineData[]>([]);
   const updateLinesRef = useRef<NodeJS.Timeout | null>(null);
   const circleRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<Record<string, HTMLDivElement | null>>({
