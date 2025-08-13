@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { useState } from "react";
 import GlassCard from "@/components/GlassCard";
 import PageLayout from "@/components/PageLayout";
 import { ExternalLink, Zap, FileText, Download } from "lucide-react";
@@ -18,7 +17,7 @@ const features = [
   {
     icon: FileText,
     title: "Types de prompts",
-    description: "Support pour prompts de code, d'agent IA, et de contenu créatif",
+    description: "Support pour prompts de code, d&apos;agent IA, et de contenu créatif",
   },
   {
     icon: Download,
@@ -203,7 +202,7 @@ export default function PromptFixPage() {
                 <Download className="h-8 w-8 mx-auto mb-4 text-accent-coral" />
                 <h4 className="font-semibold mb-3">Interface moderne</h4>
                 <p className="text-sm opacity-80 leading-relaxed">
-                  Zone d'upload par glisser-déposer, diff coloré et code corrigé téléchargeable
+                  Zone d&apos;upload par glisser-déposer, diff coloré et code corrigé téléchargeable
                 </p>
               </GlassCard>
             </div>
@@ -239,7 +238,7 @@ export default function PromptFixPage() {
               <p className="text-sm opacity-85 leading-relaxed mb-4">
                 Cette page sera régulièrement mise à jour avec de nouveaux projets au fur et à mesure 
                 de leur développement. Actuellement en cours : <strong>Éclipser</strong> (SaaS IA avancé) 
-                et d'autres projets clients.
+                et d&apos;autres projets clients.
               </p>
               <p className="text-xs opacity-60">
                 Dernière mise à jour : Août 2025

@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import GlassCard from "@/components/GlassCard";
 import PageLayout from "@/components/PageLayout";
 import { 
-  Mail, Linkedin, Github, MapPin, Phone, Calendar, 
-  Code, Database, Palette, Zap, Award, Briefcase,
-  GraduationCap, Star, Download, Printer
+  Mail, Linkedin, Github, MapPin, 
+  Code, Zap, Briefcase,
+  GraduationCap, Star, Printer
 } from "lucide-react";
 
 const personalInfo = {
@@ -62,8 +62,8 @@ const projects = [
     description: "MVP d'optimisation de prompts IA",
     tech: ["Next.js", "TypeScript", "OpenAI API", "Tailwind"],
     achievements: [
-      "Interface intuitive pour l'amélioration de prompts",
-      "Intégration API OpenAI pour l'analyse et suggestions",
+      "Interface intuitive pour l&apos;amélioration de prompts",
+      "Intégration API OpenAI pour l&apos;analyse et suggestions",
       "Système d'export et de copie rapide",
       "Déploiement automatisé sur Vercel"
     ]
@@ -185,7 +185,7 @@ export default function CVPage() {
             <p className="text-gray-800/90 leading-relaxed">
               Développeur full-stack spécialisé dans les <strong>SaaS avec IA intégrée</strong>. 
               Expert en livraison rapide de MVP production-ready utilisant Next.js, TypeScript et 
-              les dernières technologies d'intelligence artificielle. Passionné par l'création 
+              les dernières technologies d&apos;intelligence artificielle. Passionné par l&apos;création 
               d'applications modernes, scalables et centrées utilisateur.
             </p>
           </GlassCard>
