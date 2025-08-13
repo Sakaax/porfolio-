@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import GlassCard from "@/components/GlassCard";
 import PageLayout from "@/components/PageLayout";
-import { ExternalLink, Github, Zap, FileText, Download, AlertTriangle } from "lucide-react";
+import { ExternalLink, Zap, FileText, Download } from "lucide-react";
 
 const DEMO_URL = "https://prompt-refine-bot.lovable.app";
 const CODELENS_URL = "https://codelenss-d95pjl20w-ducrettet-bryans-projects.vercel.app";
@@ -28,8 +28,8 @@ const features = [
 ];
 
 export default function PromptFixPage() {
-  const [iframeError, setIframeError] = useState(false);
-  const [codeLensError, setCodeLensError] = useState(true); // CodeLens bloque les iframes par défaut
+  // const [iframeError, setIframeError] = useState(false);
+  // const [codeLensError, setCodeLensError] = useState(true); // CodeLens bloque les iframes par défaut
 
   return (
     <PageLayout className="px-4 py-20 md:py-24">
@@ -77,7 +77,7 @@ export default function PromptFixPage() {
               <Zap className="h-16 w-16 mx-auto mb-6 text-accent-coral" />
               <h3 className="text-xl font-semibold mb-4">Découvrir PromptFix</h3>
               <p className="text-sm opacity-80 mb-8 max-w-md mx-auto">
-                Testez l'optimiseur de prompts IA pour améliorer vos interactions avec l'intelligence artificielle.
+                Testez l&apos;optimiseur de prompts IA pour améliorer vos interactions avec l&apos;intelligence artificielle.
               </p>
               <a
                 href={DEMO_URL}
@@ -167,7 +167,7 @@ export default function PromptFixPage() {
               <FileText className="h-16 w-16 mx-auto mb-6 text-accent-coral" />
               <h3 className="text-xl font-semibold mb-4">Découvrir CodeLens</h3>
               <p className="text-sm opacity-80 mb-8 max-w-md mx-auto">
-                Analysez votre code avec l'IA et obtenez des corrections automatiques intelligentes en temps réel.
+                Analysez votre code avec l&apos;IA et obtenez des corrections automatiques intelligentes en temps réel.
               </p>
               <a
                 href={CODELENS_URL}

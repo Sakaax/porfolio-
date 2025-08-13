@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import GlassCard from "@/components/GlassCard";
 import { Github, Mail, FileDown, Moon, Sun } from "lucide-react";
 import { motion } from "framer-motion";
@@ -59,7 +59,7 @@ export default function Home() {
   const MAX_DRAG_DISTANCE = 150;
 
   // Calculer les lignes de connexion
-  const updateLines = () => {
+  const updateLines = useCallback(() => {
     if (!circleRef.current) return;
 
     const circleRect = circleRef.current.getBoundingClientRect();
@@ -86,7 +86,7 @@ export default function Home() {
     }).filter(Boolean);
 
     setLines(newLines);
-  };
+  }, [cardPositions]);
 
   useEffect(() => {
     if (!isDragging) {
@@ -108,13 +108,13 @@ export default function Home() {
         clearTimeout(updateLinesRef.current);
       }
     };
-  }, [cardPositions, isDragging]);
+  }, [cardPositions, isDragging, updateLines]);
 
   useEffect(() => {
     const handleResize = () => updateLines();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [updateLines]);
 
   return (
     <PageTransition>
@@ -247,7 +247,7 @@ export default function Home() {
             setIsDragging(true);
             document.body.style.userSelect = 'none';
           }}
-          onDragEnd={(event, info) => {
+          onDragEnd={() => {
             // Arrêter immédiatement le drag et effacer les lignes
             setIsDragging(false);
             document.body.style.userSelect = '';
@@ -257,7 +257,7 @@ export default function Home() {
               promptfix: { x: 0, y: 0 }
             }));
           }}
-          onDrag={(event, info) => {
+          onDrag={(_, info) => {
             if (!isDragging) return; // Prévenir les mises à jour si pas en drag
             setCardPositions(prev => ({
               ...prev,
@@ -268,7 +268,7 @@ export default function Home() {
           transition={{ type: "spring", stiffness: 150, damping: 30, mass: 1.5 }}
           className="absolute left-[8%] top-[10%] w-[34%] xl:left-[12%] xl:top-[12%] xl:w-[26%] group focus-visible:outline-2 focus-visible:outline-white/50 focus-visible:outline-offset-2 rounded-2xl cursor-grab active:cursor-grabbing"
           onMouseEnter={() => preloadPage("/projects/promptfix")}
-          onClick={(e) => {
+          onClick={() => {
             if (!isDragging) {
               router.push("/projects/promptfix");
             }
@@ -293,12 +293,12 @@ export default function Home() {
             setIsDragging(true);
             document.body.style.userSelect = 'none';
           }}
-          onDragEnd={(event, info) => {
+          onDragEnd={() => {
             setIsDragging(false);
             document.body.style.userSelect = '';
             setCardPositions(prev => ({ ...prev, stack: { x: 0, y: 0 } }));
           }}
-          onDrag={(event, info) => {
+          onDrag={(_, info) => {
             if (!isDragging) return; // Prévenir les mises à jour si pas en drag
             setCardPositions(prev => ({ ...prev, stack: { x: info.offset.x, y: info.offset.y } }));
           }}
@@ -306,7 +306,7 @@ export default function Home() {
           transition={{ type: "spring", stiffness: 150, damping: 30, mass: 1.5 }}
           className="absolute right-[8%] top-[10%] w-[34%] xl:right-[12%] xl:top-[12%] xl:w-[26%] group focus-visible:outline-2 focus-visible:outline-white/50 focus-visible:outline-offset-2 rounded-2xl cursor-grab active:cursor-grabbing"
           onMouseEnter={() => preloadPage("/stack")}
-          onClick={(e) => {
+          onClick={() => {
             if (!isDragging) {
               router.push("/stack");
             }
@@ -331,12 +331,12 @@ export default function Home() {
             setIsDragging(true);
             document.body.style.userSelect = 'none';
           }}
-          onDragEnd={(event, info) => {
+          onDragEnd={() => {
             setIsDragging(false);
             document.body.style.userSelect = '';
             setCardPositions(prev => ({ ...prev, about: { x: 0, y: 0 } }));
           }}
-          onDrag={(event, info) => {
+          onDrag={(_, info) => {
             if (!isDragging) return; // Prévenir les mises à jour si pas en drag
             setCardPositions(prev => ({ ...prev, about: { x: info.offset.x, y: info.offset.y } }));
           }}
@@ -344,7 +344,7 @@ export default function Home() {
           transition={{ type: "spring", stiffness: 150, damping: 30, mass: 1.5 }}
           className="absolute left-[8%] bottom-[10%] w-[34%] xl:left-[12%] xl:bottom-[12%] xl:w-[26%] group focus-visible:outline-2 focus-visible:outline-white/50 focus-visible:outline-offset-2 rounded-2xl cursor-grab active:cursor-grabbing"
           onMouseEnter={() => preloadPage("/about")}
-          onClick={(e) => {
+          onClick={() => {
             if (!isDragging) {
               router.push("/about");
             }
@@ -369,12 +369,12 @@ export default function Home() {
             setIsDragging(true);
             document.body.style.userSelect = 'none';
           }}
-          onDragEnd={(event, info) => {
+          onDragEnd={() => {
             setIsDragging(false);
             document.body.style.userSelect = '';
             setCardPositions(prev => ({ ...prev, contact: { x: 0, y: 0 } }));
           }}
-          onDrag={(event, info) => {
+          onDrag={(_, info) => {
             if (!isDragging) return; // Prévenir les mises à jour si pas en drag
             setCardPositions(prev => ({ ...prev, contact: { x: info.offset.x, y: info.offset.y } }));
           }}
@@ -382,7 +382,7 @@ export default function Home() {
           transition={{ type: "spring", stiffness: 150, damping: 30, mass: 1.5 }}
           className="absolute right-[8%] bottom-[10%] w-[34%] xl:right-[12%] xl:bottom-[12%] xl:w-[26%] group focus-visible:outline-2 focus-visible:outline-white/50 focus-visible:outline-offset-2 rounded-2xl cursor-grab active:cursor-grabbing"
           onMouseEnter={() => preloadPage("/contact")}
-          onClick={(e) => {
+          onClick={() => {
             if (!isDragging) {
               router.push("/contact");
             }

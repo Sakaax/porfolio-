@@ -18,22 +18,22 @@ const containerVariants = {
   }
 };
 
-const itemVariants = {
-  hidden: { 
-    opacity: 0, 
-    y: 20,
-    scale: 0.95
-  },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.2,
-      ease: [0.4, 0, 0.2, 1]
-    }
-  }
-};
+// const itemVariants = {
+//   hidden: { 
+//     opacity: 0, 
+//     y: 20,
+//     scale: 0.95
+//   },
+//   visible: { 
+//     opacity: 1, 
+//     y: 0,
+//     scale: 1,
+//     transition: {
+//       duration: 0.2,
+//       ease: [0.4, 0, 0.2, 1]
+//     }
+//   }
+// };
 
 export default function PageTransition({ children, stagger = false }: PageTransitionProps) {
   if (stagger) {

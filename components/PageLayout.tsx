@@ -1,11 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
 import { ReactNode, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import PageTransition from "./PageTransition";
-import AnimatedSection from "./AnimatedSection";
 
 interface PageLayoutProps {
   children: ReactNode;

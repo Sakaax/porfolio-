@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import GlassCard from "@/components/GlassCard";
 import PageLayout from "@/components/PageLayout";
 import { 
-  Mail, Linkedin, Code, Zap, Palette, Clock, 
+  Mail, Linkedin, Code, Clock, 
   Shield, Eye, ArrowRight, Quote, Star,
-  Euro, Calendar, HelpCircle, FileText, Globe
+  Calendar, HelpCircle, FileText
 } from "lucide-react";
 
 const whatIBring = [
@@ -129,7 +129,7 @@ export default function AboutPage() {
                 Pitch court
               </h2>
               <p className="text-gray-800/90 leading-relaxed">
-                J'aide à concevoir et livrer des <strong>MVP SaaS IA</strong> rapidement, 
+                J&apos;aide à concevoir et livrer des <strong>MVP SaaS IA</strong> rapidement, 
                 propres et scalables (Next.js, Supabase, Stripe, intégrations IA).
               </p>
             </GlassCard>
@@ -163,7 +163,7 @@ export default function AboutPage() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mb-16"
         >
-          <h2 className="text-2xl font-semibold text-center mb-8">Ce que j'apporte</h2>
+          <h2 className="text-2xl font-semibold text-center mb-8">Ce que j&apos;apporte</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {whatIBring.map((item, index) => (
               <motion.div
@@ -297,7 +297,7 @@ export default function AboutPage() {
               >
                 <GlassCard className="rounded-2xl p-6">
                   <Quote className="h-6 w-6 text-accent-coral mb-3" />
-                  <p className="text-gray-800/90 italic mb-4">"{testimonial.text}"</p>
+                  <p className="text-gray-800/90 italic mb-4">&ldquo;{testimonial.text}&rdquo;</p>
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent-coral/60 to-accent-blue/60" />
                     <div>

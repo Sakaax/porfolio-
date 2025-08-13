@@ -5,9 +5,9 @@ import { useState } from "react";
 import GlassCard from "@/components/GlassCard";
 import PageLayout from "@/components/PageLayout";
 import { 
-  Mail, Linkedin, MessageCircle, Calendar, Clock, 
-  MapPin, Phone, Send, CheckCircle, AlertCircle,
-  Globe, Github, FileText, Euro, Briefcase
+  Mail, Linkedin, MessageCircle, Clock, 
+  MapPin, Send, CheckCircle, AlertCircle,
+  Github, FileText, Briefcase
 } from "lucide-react";
 
 const contactMethods = [
@@ -212,7 +212,7 @@ export default function ContactPage() {
                 >
                   <div className="flex items-center gap-2 text-red-400">
                     <AlertCircle className="h-5 w-5" />
-                    <span className="text-sm font-medium">Erreur lors de l'envoi</span>
+                    <span className="text-sm font-medium">Erreur lors de l&apos;envoi</span>
                   </div>
                   <p className="text-sm text-gray-800/80 mt-1">Veuillez réessayer ou me contacter directement par email.</p>
                 </motion.div>
@@ -357,7 +357,7 @@ export default function ContactPage() {
               <GlassCard className="rounded-2xl p-6">
                 <h3 className="text-xl font-semibold mb-6">Disponibilités</h3>
                 <div className="space-y-4">
-                  {availability.map((item, index) => (
+                  {availability.map((item) => (
                     <div key={item.title} className="flex gap-4">
                       <item.icon className="h-6 w-6 text-accent-coral flex-shrink-0 mt-0.5" />
                       <div>
@@ -383,7 +383,7 @@ export default function ContactPage() {
               <GlassCard className="rounded-2xl p-6">
                 <h3 className="text-xl font-semibold mb-6">Types de projets</h3>
                 <div className="space-y-4">
-                  {projectTypes.map((project, index) => (
+                  {projectTypes.map((project) => (
                     <div key={project.type} className="glass rounded-lg p-4 bg-white/5">
                       <div className="flex justify-between items-start mb-2">
                         <h4 className="font-medium">{project.type}</h4>
