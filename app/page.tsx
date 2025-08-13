@@ -245,7 +245,7 @@ export default function Home() {
 
         {/* Cartes périphériques draggables */}
         <motion.div
-          ref={(el) => (cardRefs.current.promptfix = el)}
+          ref={(el) => { cardRefs.current.promptfix = el; }}
           data-card="promptfix"
           drag
           dragConstraints={{ left: -MAX_DRAG_DISTANCE, right: MAX_DRAG_DISTANCE, top: -MAX_DRAG_DISTANCE, bottom: MAX_DRAG_DISTANCE }}
@@ -291,7 +291,7 @@ export default function Home() {
         </motion.div>
 
         <motion.div
-          ref={(el) => (cardRefs.current.stack = el)}
+          ref={(el) => { cardRefs.current.stack = el; }}
           data-card="stack"
           drag
           dragConstraints={{ left: -MAX_DRAG_DISTANCE, right: MAX_DRAG_DISTANCE, top: -MAX_DRAG_DISTANCE, bottom: MAX_DRAG_DISTANCE }}
@@ -329,7 +329,7 @@ export default function Home() {
         </motion.div>
 
         <motion.div
-          ref={(el) => (cardRefs.current.about = el)}
+          ref={(el) => { cardRefs.current.about = el; }}
           data-card="about"
           drag
           dragConstraints={{ left: -MAX_DRAG_DISTANCE, right: MAX_DRAG_DISTANCE, top: -MAX_DRAG_DISTANCE, bottom: MAX_DRAG_DISTANCE }}
@@ -367,7 +367,7 @@ export default function Home() {
         </motion.div>
 
         <motion.div
-          ref={(el) => (cardRefs.current.contact = el)}
+          ref={(el) => { cardRefs.current.contact = el; }}
           data-card="contact"
           drag
           dragConstraints={{ left: -MAX_DRAG_DISTANCE, right: MAX_DRAG_DISTANCE, top: -MAX_DRAG_DISTANCE, bottom: MAX_DRAG_DISTANCE }}
