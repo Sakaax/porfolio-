@@ -186,7 +186,7 @@ export default function CVPage() {
               Développeur full-stack spécialisé dans les <strong>SaaS avec IA intégrée</strong>. 
               Expert en livraison rapide de MVP production-ready utilisant Next.js, TypeScript et 
               les dernières technologies d&apos;intelligence artificielle. Passionné par l&apos;création 
-              d'applications modernes, scalables et centrées utilisateur.
+              d&apos;applications modernes, scalables et centrées utilisateur.
             </p>
           </GlassCard>
         </motion.div>
