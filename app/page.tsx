@@ -34,10 +34,10 @@ export default function Home() {
     contact: { x: 0, y: 0 }
   });
   const [isDragging, setIsDragging] = useState(false);
-  const [lines, setLines] = useState([]);
-  const updateLinesRef = useRef(null);
-  const circleRef = useRef(null);
-  const cardRefs = useRef({
+  const [lines, setLines] = useState<any[]>([]);
+  const updateLinesRef = useRef<NodeJS.Timeout | null>(null);
+  const circleRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<Record<string, HTMLDivElement | null>>({
     promptfix: null,
     stack: null,
     about: null,
