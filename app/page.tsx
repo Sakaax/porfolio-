@@ -74,24 +74,26 @@ export default function Home() {
     const centerX = circleRect.left + circleRect.width / 2;
     const centerY = circleRect.top + circleRect.height / 2;
 
-    const newLines = Object.entries(cardPositions).map(([cardKey, position]) => {
-      if (position.x === 0 && position.y === 0) return null;
+    const newLines: LineData[] = [];
+    
+    Object.entries(cardPositions).forEach(([cardKey, position]) => {
+      if (position.x === 0 && position.y === 0) return;
 
       const cardElement = cardRefs.current[cardKey];
-      if (!cardElement) return null;
+      if (!cardElement) return;
 
       const cardRect = cardElement.getBoundingClientRect();
       const cardCenterX = cardRect.left + cardRect.width / 2 + position.x;
       const cardCenterY = cardRect.top + cardRect.height / 2 + position.y;
 
-      return {
+      newLines.push({
         key: cardKey,
         x1: centerX,
         y1: centerY,
         x2: cardCenterX,
         y2: cardCenterY,
-      };
-    }).filter(Boolean);
+      });
+    });
 
     setLines(newLines);
   }, [cardPositions]);
